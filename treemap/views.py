@@ -43,7 +43,7 @@ from shortcuts import render_to_geojson, get_pt_or_bbox, validate_form
 
 from registration.signals import user_activated
 from django_reputation.models import Reputation, Permission, UserReputationAction, ReputationAction
-from geopy_extensions.geocoders.CitizenAtlas import CitizenAtlas
+#from geopy_extensions.geocoders.CitizenAtlas import CitizenAtlas
 
 try:
     from cStringIO import StringIO
