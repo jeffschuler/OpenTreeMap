@@ -8,6 +8,7 @@ except ImportError, e:
    pass
 
 from settings_cleveland import *
+from choices_cle import *
 
 OTM_VERSION = "1.2"
 API_VERSION = "0.1"
