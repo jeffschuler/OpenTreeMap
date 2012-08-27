@@ -17,7 +17,7 @@ import audit
 from classfaves.models import FavoriteBase
 import logging
 import simplejson
-#from sorl.thumbnail import ImageField
+from sorl.thumbnail import ImageField
 from threadedcomments.models import ThreadedComment
 
 
@@ -1259,7 +1259,7 @@ class TreePhoto(TreeItem):
         return path
 
     title = models.CharField(max_length=256,null=True,blank=True)
-    #photo = ImageField(upload_to=get_photo_path)
+    photo = ImageField(upload_to=get_photo_path)
 
     
     def save(self,*args,**kwargs):
