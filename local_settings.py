@@ -110,7 +110,7 @@ ADMIN_MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'admin_media/')
 SECRET_KEY = 'insecurxe'
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates/Cleveland'),
+    os.path.join(os.path.dirname(__file__), 'templates/Oakland'),
     os.path.join(os.path.dirname(__file__), 'templates'),
 )
 
@@ -121,3 +121,6 @@ ADD_FORM_TARGETS = [
     ('view', 'I\'m finished'),
 ]
 ADD_FORM_TARGETS_DEFAULT = 'view'
+
+API_KEY_GOOGLE_MAP = ''
+API_KEY_GOOGLE_ANALYTICS = ''

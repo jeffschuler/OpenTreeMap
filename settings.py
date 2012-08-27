@@ -7,7 +7,7 @@ try:
 except ImportError, e:
    pass
 
-from settings_cleveland import *
+from local_settings import *
 from choices_cle import *
 
 OTM_VERSION = "1.2"
