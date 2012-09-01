@@ -91,8 +91,9 @@
                 <td class="image"><a href="{% url treemap_tree_detail tree.id %}">
                 
                 {% if tree.last_updated_by.get_profile.photo %}
-                    <img src="/media/{% thumbnail tree.last_updated_by.get_profile.photo 32x32 crop %}"
-                        alt="image description" width="33" height="32" /></td> 
+                    {% thumbnail tree.last_updated_by.get_profile.photo 32x32 crop="center" as image %}"
+                        <img src="/media/{{image.url}}" alt="image description" width="33" height="32" /></td> 
+                    {% endthumbnail %}
                 {% else %}
                     <img src="{{ STATIC_URL }}images/v2/defaultuser.gif" alt="image description" width="33" height="32" /></td>              
                 {% endif %}
@@ -139,7 +140,9 @@
             {% for pic in latest_photos %}
                 <li>
                     <a href="{{ pic.tree.get_absolute_url }}">
-                        <img src="/media/{% thumbnail pic.photo 43x42 %}" alt="image description" width="43" height="42" />
+                        {% thumbnail pic.photo 43x42 as image %}
+                            <img src="/media/{{image.url}}" alt="image description" width="43" height="42" />
+                        {% endthumbnail %}
                     </a>
                 </li>
             {% endfor %}
