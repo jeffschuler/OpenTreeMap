@@ -1,0 +1,34 @@
+ <div id="footer"> 
+    <div class="footer-holder"> 
+        <div class="ad"> 
+            <strong>Our Partners</strong> 
+            <ul> 
+                <li><a href="http://www.fuf.net/"><img src="{{ STATIC_URL }}images/SanFrancisco/es/ad01.gif" alt="image description" width="59" height="61" /></a></li> 
+                <li><a href="http://www.fuf.net/"><img src="{{ STATIC_URL }}images/SanFrancisco/es/ad02.gif" alt="Friends of the Urban Forest" width="133" height="61" /></a></li> 
+                <li><a href="http://www.fire.ca.gov/"><img src="{{ STATIC_URL }}images/SanFrancisco/es/ad03.gif" alt="CalFire" width="46" height="61" /></a></li> 
+                <li><a href="http://www.sfgov.org/"><img src="{{ STATIC_URL }}images/SanFrancisco/es/ad04.gif" alt="City & County of San Francisco" width="56" height="59" /></a></li> 
+            </ul> 
+        </div> 
+        <ul class="footer-nav"> 
+            <li><a href="{% url treemap.views.tree_add %}">Add a tree</a></li> 
+            <li><a href="{{ SITE_ROOT }}about/">About</a></li> 
+            <li><a href="{{ SITE_ROOT }}resources/">Resources</a></li> 
+            <li><a href="http://blog.urbanforestmap.org/">Blog</a></li>
+            <li><a href="{{ SITE_ROOT }}contact/">Contact</a></li> 
+            <li><a href="{{ SITE_ROOT }}donate/">Donate</a></li> 
+            {% if user.is_authenticated %}
+               <li>Logged in as <a href="{{ SITE_ROOT }}profiles/{{user.username}}/">{{user.username|escape}}</a>
+               <span id="logout"><a href="{{ SITE_ROOT }}accounts/logout/?next={{ SITE_ROOT }}" id="logout">(Logout)</a></span>
+               {% if user.is_superuser %}
+                   <li><a href="{{ SITE_ROOT }}_admin_/">Admin</a></li>
+               {% endif %}
+               {% if user.reputation.reputation > 1000 %}
+                   <li><a href="{% url treemap.views.verify_edits %}">Recent Changes</a></li>
+               {% endif %}
+            {% else %}
+                <li><a href="{{ SITE_ROOT }}accounts/login/">Login</a> or <a href="{{ SITE_ROOT }}accounts/register/" class="buttomSm">Sign up</a></li>
+            {% endif %}
+        </ul> 
+    </div> 
+    <br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike License</a>.
+</div> 
