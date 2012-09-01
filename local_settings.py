@@ -21,12 +21,12 @@ COMPLETE_ARRAY = ['species','condition','sidewalk_damage','powerline_conflict_po
 MAP_CLICK_RADIUS = .0015 # in decimal degrees
 
 
-LOGIN_REDIRECT_URL = '/'        
+LOGIN_REDIRECT_URL = '/'
 
 # must end with trees/ because of odd tilecache deployment issue
 # will be populated with layer name /trees/{layername} dynamically
 # in javascript depending on the google base layer being used
-TC_URL = 'http://tilecache.urbanforestmap.org/tiles/1.0.0/oakland/'
+TC_URL = 'http://tilecache.urbanforestmap.org/tiles/1.0.0/trees/'
 
 STATIC_DATA = os.path.join(os.path.dirname(__file__), 'static/')
 
@@ -57,19 +57,19 @@ MANAGERS = ADMINS
 REGISTRATION_OPEN = True # defaults to True
 ACCOUNT_ACTIVATION_DAYS = 5
 
-DEFAULT_FROM_EMAIL= 'contact@urbanforestmap.org'
+DEFAULT_FROM_EMAIL= 'jeff@websubstrate.com'
 EMAIL_MANAGERS = False
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'treemap@umbrellaconsulting.com'
+EMAIL_HOST_USER = 'jeff@websubstrate.com'
 EMAIL_HOST_PASSWORD = 'treemap05'
 EMAIL_PORT = 587
 
 #http://sftrees.securemaps.com/ticket/236
-CONTACT_EMAILS = ['joshlivni@gmail.com']#,'admins@urbanforestmap.org']
+CONTACT_EMAILS = ['jeff@websubstrate.com']#,'admins@urbanforestmap.org']
 
-CACHE_BACKEND = 'file:///tmp/oakland_cache'
+#CACHE_BACKEND = 'file:///tmp/oakland_cache'
 
 DATABASES = {
     'default': {
@@ -110,7 +110,7 @@ ADMIN_MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'admin_media/')
 SECRET_KEY = 'insecurxe'
 
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates/Oakland'),
+    os.path.join(os.path.dirname(__file__), 'templates/SanFrancisco'),
     os.path.join(os.path.dirname(__file__), 'templates'),
 )
 
